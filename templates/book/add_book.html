@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Add a new book to shelf {% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><br>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Add a new book</h3>
+                        <p class="text-center">Current datetime: {{ current_datetime|date:"d-m-Y H:i:s" }}</p>
+                    </div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="card-body">
+                             {{ form }}
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type='submit' class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+
+                </div>
+                <br>
+                <h1>List of added books</h1>
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Author</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
