@@ -1,18 +1,64 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
-
 {% block content %}
-
 <div class="container">
-    <style>
-    body {
-      background-color: #4c4c4c;
-    }
-    .navbar {
-      background-color: #ffffff !important;
-    }
-    </style>
+   
+      <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="p-4 rounded-3  text-center">
+                <h4 class="fw-bold text-primary mb-2">My Shelf, Book lovers app</h4>
+                <p class="text-body-secondary mb-0">
+                    Hello reader and welcome to MyShelf! You got a free time just for yourself and you want to relax? <br>
+                     Weeeell you are in the right place. Just take a book (one of your favourites) and start your adventure.
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success-subtle text-success mb-2">
+                        What will you find?
+                    </span>
+                    <ul class="text-body-secondary mb-0">
+                        <li>Recomandations from cool people about cool books</li>
+                        <li>An update for your current favourite book</li>
+                        <li>And a virtual Shelf for you to organize all your books</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-danger-subtle text-danger mb-2">
+                        Not here
+                    </span>
+                    <ul class="text-body-secondary mb-0">
+                        <li>Hate speech about a person's taste in literature</li>
+                        <li>Boring books</li>
+                        <li>A phisical Shelf</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="text-center text-body-secondary">
+        <small>A© {{ year|default:2026 }} MyShelf</small>
+    </div>
+
+
 
 </div>
 

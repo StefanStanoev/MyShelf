@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} List of books {% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row g-1">
+
+        {% for book in all_books%}
+        <div class="col-md-4 col-lg-3">
+            <div class="card h-100 shadow-sm">
+
+               <img src=""
+                     class="card-img-top"
+                     alt="Book image">
+
+                <div class="card-body">
+                    <h4 class="card-title">
+                        {{ book.title }}
+                        {{ book.author }}
+                        {{ book.publication_year }}
+                        {{ book.publisher }}
+                        {{ book.pages }}
+                        {{ book.genre }}
+                        {{ book.language }}
+                        {{ book.cover }}
+                        {{ book.description }}
+
+                    </h4>
+                </div>
+             
+            </div>
+        
+        </div>
+        {% endfor %}
+      
+    </div>
+</div>
+{% endblock %}

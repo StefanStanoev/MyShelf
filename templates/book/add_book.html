@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Add a new book to shelf {% endblock %}
+{% block title %} ADD A NEW BOOK TO YOUR SHELF {% endblock %}
 
 {% block content %}
 
@@ -10,8 +10,7 @@
                 <br><br>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="text-center">Add a new book</h3>
-                        <p class="text-center">Current datetime: {{ current_datetime|date:"d-m-Y H:i:s" }}</p>
+                        <h3 class="text-center">Add book</h3>
                     </div>
                     <form method="POST">
                         {% csrf_token %}
@@ -24,20 +23,6 @@
                     </form>
 
                 </div>
-                <br>
-                <h1>List of added books</h1>
-                <table class="table table-primary">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Author</th>
-                            <th>Publication Year</th>
-                            <th>Publisher</th>
-                            <th>Book language</th>
-                            <th>Book genre</th>
-                        </tr>
-                    </thead>
-                </table>
             </div>
         </div>
     </div>
