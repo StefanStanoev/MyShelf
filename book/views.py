@@ -36,3 +36,9 @@ class BookListView(LoginRequiredMixin, ListView):
         return context
 
 
+
+def get_all_books_per_category(request, pk):
+
+    all_books = Book.objects.filter(category_id=pk)
+
+    return render(request, 'book/list_books_per_category.html', {'books': all_books})

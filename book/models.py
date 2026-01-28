@@ -13,7 +13,8 @@ class Book(models.Model):
         category = models.ForeignKey(Category,on_delete=models.CASCADE, null= True, blank=True)
         description = models.TextField()
         created_at = models.DateTimeField(auto_now_add=True) 
-        updated_at = models.DateTimeField(auto_now=True) 
+        updated_at = models.DateTimeField(auto_now=True)
+        
         
 
 
