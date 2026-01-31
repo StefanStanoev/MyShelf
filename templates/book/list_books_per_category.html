@@ -6,7 +6,7 @@
     <div class="row g-4">
 
         {% for book in books %}
-        <div class="col-md-4 col-lg-3">
+        <div class="col-md-4 col-lg-5">
             <div class="card h-100 shadow-sm">
 
                 <img src="{% static 'images/art.png' %}"
@@ -28,12 +28,18 @@
                         <li><strong>Genre:</strong> {{ book.genre }}</li>
                         <li><strong>Language:</strong> {{ book.language }}</li>
                         <li><strong>Cover:</strong> {{ book.cover }}</li>
+                        <li><strong>Description:</strong> {{ book.description }}</li>
+                           <strong>Your rating:</strong>
+                        <span class="text-muted"></span>
+                        <br>
+                            ⭐ {{ review.rating }}/5
                     </ul>
 
                     <p class="card-text text-muted mt-auto">
-                        <li><strong>Description:</strong> {{ book.description }}</li>
+                        <a href="#" class="btn btn-primary">Leave a commnet</a>
+                       
                     </p>
-
+                                 
                 </div>
             </div>
         </div>

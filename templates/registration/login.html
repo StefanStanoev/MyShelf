@@ -1,28 +1,47 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %} Login {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <br><br><br><br><br>
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Login</h3>
-                    </div>
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="card-body">
-                            {{ form }}
-                        </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-outline-success">Login</button>
-                            <a href="#" class="btn btn-danger">Forgot password?</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<style>
+.login-background {
+    min-height: 100vh;
+    background-image: url('{% static "images/navbar.png" %}');
+    background-size:contain;
+    background-position: center;
+    background-repeat:repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 20px 20px 20px ; 
+}
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(50px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+</style>
+
+<div class="container-fluid login-background">
+    <div class="login-card card">
+        <div class="card-header text-center" style="background-color: #850058; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <h3>Login</h3>
         </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="card-body">
+                {{ form }}
+            </div>
+            <div class="card-footer text-center" style="background-color: #850058; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                <button type="submit" class="btn btn-primary" style="background-color: #1cc88a; border: none;">Login</button></a>
+            </div>
+        </form>
     </div>
+</div>
 {% endblock %}

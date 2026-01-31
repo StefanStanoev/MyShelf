@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Update Book {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><br>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Update:  {{ book.title }} by {{ book.author }}</h3>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <p>Title: {{ book.title }} </p>
+                            <p>Author: {{ book.author }} </p>
+                            <p>Cover: {{ book.cover }} </p>
+                            <p>Genre: {{book.genre}}</p>
+                            {{ form }}
+
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-outline-success">Save</button>
+                            <a href="{% url 'list-books' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

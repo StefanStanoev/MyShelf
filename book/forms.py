@@ -36,3 +36,22 @@ class BookForm(forms.ModelForm):
 
         return cleaned_data
     
+
+class BookUpdateForm(forms.ModelForm):
+     class Meta:
+        model = Book
+        fields = ['publication_year', 'publisher','pages','genre','language','category','description']
+
+        widgets = {
+            #'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter book title'}),
+            #'author': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an author for the book'}),
+            'publication_year':forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Please enter book publication year'}),
+            'publisher': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter book publisher'}),
+            'pages': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Please enter number of pages'}),
+            'genre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter literary genre'}),
+            'language': forms.TextInput(attrs={'class': 'form-control', 'rows':5 ,'placeholder': 'Please enter book language'}),
+            #'cover': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter the type of cover'}),
+            'category':forms.Select(attrs={'class': 'form-select'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'})
+
+        }

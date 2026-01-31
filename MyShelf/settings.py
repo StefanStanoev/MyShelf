@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'home',
     'book',
     'userextend',
-    'category'
+    'category',
 ]
 
 MIDDLEWARE = [

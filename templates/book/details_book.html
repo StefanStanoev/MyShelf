@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} View details of this book {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><br>
+                <div class="card text-center">
+                    <div class="card-header">
+                        More details
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: brown;">{{ book.title }} by {{ book.author }}</h4>
+                        <p class="card-text">
+                            <strong>Publication year: </strong> {{ book.publication_year }}<br>
+                            <strong>Publisher: </strong> {{ book.publisher }}<br>
+                            <strong>Pages: </strong> {{ book.pages }}<br>
+                            <strong>Genre: </strong> {{ book.genre }}<br>
+                            <strong>Language: </strong> {{ book.language }}<br>
+                            <strong>Cover: </strong> {{ book.cover }}<br>
+                            <strong>Category: </strong> {{ book.category }}<br>
+                            <strong>Description: </strong> {{ book.description}}<br>
+
+                        </p>
+                        <a href="{% url 'list-books' %}" class="btn btn-primary">Go back</a>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                       Created at: {{ book.created_at|date:"d-m-Y H:i:s" }} / Updated at: {{ book.updated_at|date:"d-m-Y H:i:s" }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
