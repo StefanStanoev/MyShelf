@@ -1,31 +1,51 @@
 {% extends 'base.html' %}
-
-{% block title %} Delete a book{% endblock %}
+{% load static %}
+{% block title %} Login {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6  offset-md-3">
-                <br><br>
-                <div class="card">
+<style>
+.delete_book-background {
+    min-height: 100vh;
+    background-image: url('{% static "images/image.png" %}');
+    background-size:contain;
+    background-position: center;
+    background-repeat:repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 20px 20px 20px ; 
+}
 
+.delete_book-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(50px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+</style>
+    <div class="container-fluid delete_book-background">
+        <div class="delete_book-card card">
+            <div class="card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <h4 class="text-center"> Deleting {{ book.title }}?</h4>
+            </div>
                     <form method="post">
                         {% csrf_token %}
                         <div class="card-body">
-                            <h4 class="text-center"> Deleting {{ book.title }}?</h4>
-                            <p class="text-left" style="color: blue;">More about this book:</p>
-                                Publication Year: {{ book.publication_year }}<br>
-                                Publisher: {{ book.publisher }}<br>
-                                Pages: {{ book.pages }}<br>
-                                Genre: {{ book.genre }}<br>
-                                Language: {{ book.language }}<br>
-                                Cover: {{book.cover}}<br>
-                                Category: {{book.category}}<br>
-                            </p>
+                                <p>Publication Year: {{ book.publication_year }}</p>
+                                <p>Publisher: {{ book.publisher }}</p>
+                                <p>Pages: {{ book.pages }}</p>
+                                <p>Genre: {{ book.genre }}</p>
+                                <p>Language: {{ book.language }}</p>
+                                <p>Cover: {{book.cover}}</p>
+                                <p>Category: {{book.category}}</p>
                         </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-danger">Yes</button>
-                            <a href="{% url 'list-books' %}" class="btn btn-outline-secondary">No</a>
+                        <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                            <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Yes</button>
+                            <a href="{% url 'list-books' %}" class="btn btn-secondary">No</a>
                         </div>
                     </form>
                 </div>

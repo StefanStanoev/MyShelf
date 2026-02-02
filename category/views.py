@@ -1,7 +1,7 @@
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.views.generic import CreateView,ListView
+from django.views.generic import CreateView,ListView,DeleteView
 from category.forms import CategoryForm
 from category.models import Category
 
@@ -33,3 +33,18 @@ class CategoryListView(LoginRequiredMixin, ListView):
 
 
         return context
+    
+
+class CategoryDeleteSelectView(LoginRequiredMixin, ListView):
+    template_name= 'category/select_category_to_delete.html'
+    model = Category
+    context_object_name = 'all_categories'
+
+    def get_queryset(self):
+        return Category.objects.filter(active=True)
+
+class CategoryDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = 'category/delete_category.html'
+    model = Category
+    success_url = '/list_categories/'
+

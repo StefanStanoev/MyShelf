@@ -1,28 +1,48 @@
 {% extends 'base.html' %}
-
-{% block title %} Update Book {% endblock %}
+{% load static %}
+{% block title %} Add a new book {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <br><br>
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Update:  {{ book.title }} by {{ book.author }}</h3>
-                    </div>
-                    <form method="post">
+<style>
+.update_book-background {
+    min-height: 100vh;
+    background-image: url('{% static "images/image.png" %}');
+    background-size:contain;
+    background-position: center;
+    background-repeat:repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 20px 20px 20px ; 
+}
+
+.update_book-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(50px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+</style>
+    <div class="container-fluid update_book-background">
+        <div class="update_book-card card">
+            <div class="card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                     <h3 class="text-center">UPDATE BOOK</h3>
+            </div>
+                    <form method="POST">
                         {% csrf_token %}
                         <div class="card-body">
                             <p>Title: {{ book.title }} </p>
                             <p>Author: {{ book.author }} </p>
                             <p>Cover: {{ book.cover }} </p>
-                            <p>Genre: {{book.genre}}</p>
                             {{ form }}
 
                         </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-outline-success">Save</button>
+                        <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                            <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Save</button>
                             <a href="{% url 'list-books' %}" class="btn btn-secondary">Cancel</a>
                         </div>
                     </form>

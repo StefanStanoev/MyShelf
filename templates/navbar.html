@@ -1,5 +1,6 @@
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg"
+          style="background-color:rgb(53, 23, 2)">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -9,28 +10,31 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}">Home</a>
+                    <a class="nav-link active" aria-current="page" style="color: floralwhite;" href="{% url 'home_page' %}">Home</a>
                 </li>
 
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             Books
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'add-book' %}">Add new book</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list-books' %}">List of all books</a></li>
+                            <li><a class="dropdown-item" style="color: rgb(53, 23, 2);" href="{% url 'add-book' %}">Add new book</a></li>
+                            <li><a class="dropdown-item" style="color: rgb(53, 23, 2);" href="{% url 'list-books' %}">List of all books</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             Category
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'create-category' %}">Add new category</a></li>
-                            <li><a class="dropdown-item" href="{% url 'list-categories' %}">List of categories</a></li>
+                        <ul class="dropdown-menu"> 
+
+                            <li><a class="dropdown-item" style="color: rgb(53, 23, 2);" href="{% url 'list-categories' %}">List of categories</a></li>
+                            <li><a class="dropdown-item" style="color: rgb(53, 23, 2);" href="{% url 'create-category' %}">Add new category</a></li>
+                            <li><a class="dropdown-item" style="color: rgb(53, 23, 2);" href="{% url 'delete-category-select' %}">Delete a category</a></li>
+
                         </ul>
                     </li>
                 {% endif %}
@@ -43,7 +47,7 @@
                     </form>
 
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-outline-dark">Login</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-dark" style="color: white;">Login</a>
                     <a href="{% url 'create-user' %}" class="btn btn-dark">Sign up</a>
                 {% endif %}
             </div>

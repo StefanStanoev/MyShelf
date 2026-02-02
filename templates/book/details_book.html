@@ -1,37 +1,56 @@
 {% extends 'base.html' %}
-
-{% block title %} View details of this book {% endblock %}
+{% load static %}
+{% block title %} Add a new book {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <br><br>
-                <div class="card text-center">
-                    <div class="card-header">
-                        More details
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title" style="color: brown;">{{ book.title }} by {{ book.author }}</h4>
-                        <p class="card-text">
-                            <strong>Publication year: </strong> {{ book.publication_year }}<br>
-                            <strong>Publisher: </strong> {{ book.publisher }}<br>
-                            <strong>Pages: </strong> {{ book.pages }}<br>
-                            <strong>Genre: </strong> {{ book.genre }}<br>
-                            <strong>Language: </strong> {{ book.language }}<br>
-                            <strong>Cover: </strong> {{ book.cover }}<br>
-                            <strong>Category: </strong> {{ book.category }}<br>
-                            <strong>Description: </strong> {{ book.description}}<br>
+<style>
+.details_book-background {
+    min-height: 100vh;
+    background-image: url('{% static "images/image.png" %}');
+    background-size:contain;
+    background-position: center;
+    background-repeat:repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 20px 20px 20px ; 
+}
 
-                        </p>
-                        <a href="{% url 'list-books' %}" class="btn btn-primary">Go back</a>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                       Created at: {{ book.created_at|date:"d-m-Y H:i:s" }} / Updated at: {{ book.updated_at|date:"d-m-Y H:i:s" }}
-                    </div>
-                </div>
-            </div>
+.details_book-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(50px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+</style>
+
+
+    <div class="container-fluid details_book-background">
+        <div class="details_book-card card">
+            <div class="card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <h3 class="text-center">BOOK DETAILS</h3>
+            <p>Book created at {{ book.created_at|date:"d-m-Y H:i:s"}}</p>
+            <p>Book Updated at {{ book.updated_at|date:"d-m-Y H:i:s"}} </p>
+        </div>
+        <div class="card-body">
+            <p><strong>Title:</strong> {{ book.title }}</p>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Publication year:</strong> {{ book.publication_year }}</p>
+            <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+            <p><strong>Pages:</strong> {{ book.pages }}</p>
+            <p><strong>Genre:</strong> {{ book.genre }}</p>
+            <p><strong>Language:</strong> {{ book.language }}</p>
+            <p><strong>Cover:</strong> {{ book.cover }}</p>
+            <p><strong>Category:</strong> {{ book.category }}</p>
+            <p><strong>Description:</strong> {{ book.description }}</p>
+        </div>
+        <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+            <a href="{% url 'list-books' %}" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Go back</a>
         </div>
     </div>
-
+</div>
 {% endblock %}

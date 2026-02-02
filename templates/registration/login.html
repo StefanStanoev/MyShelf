@@ -6,7 +6,7 @@
 <style>
 .login-background {
     min-height: 100vh;
-    background-image: url('{% static "images/navbar.png" %}');
+    background-image: url('{% static "images/image.png" %}');
     background-size:contain;
     background-position: center;
     background-repeat:repeat;
@@ -30,16 +30,16 @@
 
 <div class="container-fluid login-background">
     <div class="login-card card">
-        <div class="card-header text-center" style="background-color: #850058; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
-            <h3>Login</h3>
+        <div class="card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <h3>Login Page</h3>
         </div>
         <form method="post">
             {% csrf_token %}
             <div class="card-body">
                 {{ form }}
             </div>
-            <div class="card-footer text-center" style="background-color: #850058; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
-                <button type="submit" class="btn btn-primary" style="background-color: #1cc88a; border: none;">Login</button></a>
+            <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Login</button>
             </div>
         </form>
     </div>

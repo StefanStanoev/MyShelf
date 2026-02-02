@@ -1,31 +1,47 @@
 {% extends 'base.html' %}
-
-{% block title %} Create a new user {% endblock %}
+{% load static %}
+{% block title %} Login {% endblock %}
 
 {% block content %}
+ <style>
+ .login-background {
+    min-height: 100vh;
+    background-image: url('{% static "images/image.png" %}');
+    background-size:contain;
+    background-position: center;
+    background-repeat:repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 20px 20px 20px ; 
+ }
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <br><br>
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Create a new user</h3>
-                    </div>
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="card-body">
-                             {{ form }}
-                        </div>
-                        <div class="card-footer text-center">
-                            <button type='submit' class="btn btn-success">Save</button>
-                        </div>
-                    </form>
+ .login-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(50px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+ }
+ </style>
 
-                </div>
-
-            </div>
+ <div class="container-fluid login-background">
+    <div class="login-card card">
+        <div class="card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <h3>Sign Up Page</h3>
         </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="card-body">
+                {{ form }}
+            </div>
+            <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Sign Up</button></a>
+            </div>
+        </form>
     </div>
-
+ </div>
 {% endblock %}
