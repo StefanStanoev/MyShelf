@@ -2,65 +2,153 @@
 {% load static %}
 {% block title %}Home{% endblock %}
 {% block content %}
+   <link href="{% static 'css/product.css' %}" rel="stylesheet" />
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
 
 
-<div class="container">
-      <div class="row mb-5">
-        <div class="col-md-12">
-            <div class="p-4 rounded-3  text-center">
-                <h4 class="fw-bold text-primary mb-2">My Shelf, Book lovers app</h4>
-                <p class="text-body-secondary mb-0">
-                    Hello reader and welcome to MyShelf! You got a free time just for yourself and you want to relax? <br>
-                     Weeeell you are in the right place. Just take a book (one of your favourites) and start your adventure.
-
-                </p>
-            </div>
+ <main>
+      <div
+        class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary"
+      >
+        <div class="col-md-6 p-lg-5 mx-auto my-5">
+          <h1 class="display-3 fw-bold" style="color: rgb(53, 23, 2);">MyShelf App</h1>
+          <h3 class="fw-normal text-muted mb-3">
+            Relax with your favourite books here
+          </h3>
+          
         </div>
-    </div>
+      </div>
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <h2 class="display-5">What will you find here?</h2>
+          </div>
+          <div
+            class="bg-body-tertiary shadow-sm mx-auto"
 
-    
-
-    <div class="row g-4 mb-5">
-
-        <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                    <span class="badge bg-success-subtle text-success mb-2">
-                        What will you find?
-                    </span>
-                    <ul class="text-body-secondary mb-0">
-                        <li>Recomandations from cool people about cool books</li>
-                        <li>An update for your current favourite book</li>
-                        <li>And a virtual Shelf for you to organize all your books</li>
-                    </ul>
-                </div>
-            </div>
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          ></div>
         </div>
-
-        <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                    <span class="badge bg-danger-subtle text-danger mb-2">
-                        Not here
-                    </span>
-                    <ul class="text-body-secondary mb-0">
-                        <li>Hate speech about a person's taste in literature</li>
-                        <li>Boring books</li>
-                        <li>A phisical Shelf</li>
-                    </ul>
-                </div>
-            </div>
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 p-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div
+            class="bg-dark shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          ></div>
         </div>
-
-    </div>
-
-
-    <div class="text-center text-body-secondary">
-        <small>A© {{ year|default:2026 }} MyShelf</small>
-    </div>
-
-
-
-</div>
+      </div>
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 p-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div
+            class="bg-dark shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          ></div>
+        </div>
+        <div
+          class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+          <div class="my-3 py-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
+          </div>
+          <div
+            class="bg-body-tertiary shadow-sm mx-auto"
+            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
+          ></div>
+        </div>
+      </div>
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div
+          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+        >
+ 
+ 
+    </main>
 
 {% endblock %}

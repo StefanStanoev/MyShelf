@@ -24,8 +24,9 @@ urlpatterns = [
     path('', include('home.urls')),
     path('', include('book.urls')),
     path('', include('category.urls')),
+    path('', include('review.urls')),
     path("login/", views.LoginView.as_view(form_class=LoginForm), name="login"),
-     path('', include('django.contrib.auth.urls')),
+    path('', include('django.contrib.auth.urls')),
     path('', include('userextend.urls')),
    
 

@@ -32,13 +32,8 @@
                            <strong>Your rating:</strong>
                         <span class="text-muted"></span>
                         <br>
-                            ⭐ {{ review.rating }}/5
+                        <a href="{% url 'add-review' book.id %}">Add review</a>
                     </ul>
-
-                    <p class="card-text text-muted mt-auto">
-                        <a href="#" class="btn btn-primary">Leave a commnet</a>
-                       
-                    </p>
                                  
                 </div>
             </div>

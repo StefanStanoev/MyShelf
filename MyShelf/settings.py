@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'book',
     'userextend',
     'category',
+    'review',
 ]
 
 MIDDLEWARE = [

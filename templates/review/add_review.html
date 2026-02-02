@@ -4,7 +4,7 @@
 
 {% block content %}
 <style>
-.add_book-background {
+.add_review-background {
     min-height: 100vh;
     background-image: url('{% static "images/image.png" %}');
     background-size:contain;
@@ -16,7 +16,7 @@
     padding: 100px 20px 20px 20px ; 
 }
 
-.add_book-card {
+.add_review-card {
     width: 100%;
     max-width: 450px;
     border-radius: 15px;
@@ -26,24 +26,23 @@
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     overflow: hidden;
 }
-</style>>
+</style>
 
-    <div class="container-fluid add_book-background">
-        <div class="add_book-card card">
+<div class="container-fluid add_review-background">
+        <div class="add_review-card card">
             <div class= "card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                <h3>ADD A BOOK</h3>
+                <h4>Add a review for {{book.title}}</h4>
             </div>
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="card-body">
-                             {{ form }}
-                        </div>
-                        <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
-                            <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Save</button>
-                        </div>
-                    </form>
-
+            <form method="post">
+                {% csrf_token %}
+                <div class="card-body">
+                    {{ form }}
                 </div>
+                <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                        <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Save</button>
+                </div>
+            </form>
+        </div>
             </div>
         </div>
     </div>

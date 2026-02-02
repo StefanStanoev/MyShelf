@@ -1,4 +1,4 @@
-
+from review.models import Review
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import CreateView,ListView,UpdateView,DeleteView,DetailView
@@ -40,8 +40,11 @@ class BookListView(LoginRequiredMixin, ListView):
 def get_all_books_per_category(request, pk):
 
     all_books = Book.objects.filter(category_id=pk)
+    #rating = Review.objects.get(book_id=pk, user=request.user)
+    rating = None
 
-    return render(request, 'book/list_books_per_category.html', {'books': all_books})
+
+    return render(request, 'book/list_books_per_category.html', {'books': all_books, 'rating': rating})
 
 
 
