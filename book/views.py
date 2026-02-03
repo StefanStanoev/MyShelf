@@ -40,11 +40,11 @@ class BookListView(LoginRequiredMixin, ListView):
 def get_all_books_per_category(request, pk):
 
     all_books = Book.objects.filter(category_id=pk)
-    #rating = Review.objects.get(book_id=pk, user=request.user)
-    rating = None
+    rating = Review.objects.filter(user=request.user)
 
 
-    return render(request, 'book/list_books_per_category.html', {'books': all_books, 'rating': rating})
+
+    return render(request, 'book/list_books_per_category.html', {'books': all_books, 'ratings': rating})
 
 
 

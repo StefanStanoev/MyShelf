@@ -25,7 +25,7 @@ def add_review(request, book_id):
             review.user = request.user
             form.save()
     
-            return redirect('list-books-per-category', book.id)
+            return redirect('list-books-per-category', book.category.id)
     else:
         form = ReviewForm(instance=review)
 

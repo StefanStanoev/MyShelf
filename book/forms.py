@@ -18,7 +18,8 @@ class BookForm(forms.ModelForm):
             'language': forms.TextInput(attrs={'class': 'form-control', 'rows':5 ,'placeholder': 'Please enter book language'}),
             'cover': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter the type of cover'}),
             'category':forms.Select(attrs={'class': 'form-select'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'})
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'}),
+            'img': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an image'})
             
         }
 
@@ -40,7 +41,7 @@ class BookForm(forms.ModelForm):
 class BookUpdateForm(forms.ModelForm):
      class Meta:
         model = Book
-        fields = ['publication_year', 'publisher','pages','genre','language','category','description']
+        fields = ['publication_year', 'publisher','pages','genre','language','category','description', 'img']
 
         widgets = {
             #'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter book title'}),
@@ -52,6 +53,7 @@ class BookUpdateForm(forms.ModelForm):
             'language': forms.TextInput(attrs={'class': 'form-control', 'rows':5 ,'placeholder': 'Please enter book language'}),
             #'cover': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter the type of cover'}),
             'category':forms.Select(attrs={'class': 'form-select'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'})
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'}),
+                       'img': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an image'})
 
         }

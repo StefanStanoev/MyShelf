@@ -9,12 +9,11 @@
         <div class="col-md-4 col-lg-5">
             <div class="card h-100 shadow-sm">
 
-                <img src="{% static 'images/art.png' %}"
+                <img src="{{ book.img }}"
                      class="card-img-top"
                      alt="{{ book.title }}">
 
                 <div class="card-body d-flex flex-column">
-
 
                     <h5 class="card-title fw-bold">
                         {{ book.title }}
@@ -32,7 +31,20 @@
                            <strong>Your rating:</strong>
                         <span class="text-muted"></span>
                         <br>
-                        <a href="{% url 'add-review' book.id %}">Add review</a>
+                    
+                        {% for rating in ratings %}
+        
+                            {% if book.id == rating.book.id %}
+        
+                          {% for _ in ""|center:rating.rating %}
+  ⭐
+{% endfor %}
+
+                            {% endif %}
+                        {% endfor %}
+                        <br>
+                        <a href="{% url 'add-review' book.id %}" class = "btn mt-2" style="background-color:rgb(53, 23, 2); color: white;">Add Review</a>
+
                     </ul>
                                  
                 </div>
