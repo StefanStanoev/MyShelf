@@ -2,7 +2,7 @@ from django.db import models
 from category.models import Category
 
 class Book(models.Model):
-        title = models.CharField(max_length=50)
+        title = models.CharField(max_length=60)
         author= models.CharField(max_length=50)
         publication_year = models.PositiveIntegerField()
         publisher = models.CharField(max_length=50)

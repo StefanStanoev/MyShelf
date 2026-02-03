@@ -42,6 +42,7 @@ class CategoryDeleteSelectView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Category.objects.filter(active=True)
+    
 
 class CategoryDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'category/delete_category.html'

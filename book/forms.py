@@ -54,6 +54,6 @@ class BookUpdateForm(forms.ModelForm):
             #'cover': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter the type of cover'}),
             'category':forms.Select(attrs={'class': 'form-select'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'}),
-                       'img': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an image'})
+            'img': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an image'})
 
         }

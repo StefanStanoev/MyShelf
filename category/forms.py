@@ -8,7 +8,8 @@ class CategoryForm(forms.ModelForm):
         model = Category
         fields = '__all__' 
 
-        widgets = {'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your category name'}), }
+        widgets = {'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter your category name'}),
+                   'img': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an image'})}
 
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -22,4 +23,4 @@ class CategoryForm(forms.ModelForm):
             self.add_error('name', msg)
 
         return cleaned_data
-        
+    
