@@ -39,16 +39,16 @@
                     <td>{{ book.updated_at|date:"d/m/Y H:i" }}</td>
                     <td style="text-align: right">
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color: rgb(53, 23, 2); border: none;" data-bs-toggle="dropdown"
+                            <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color: rgb(232, 221, 178) ;  border: none;" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                more actions
+                                more actions 
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item " style="color:rgb(53, 23, 2) ;"  href="{% url 'update-book' book.id %}">Update</a>
+                                <li><a class="dropdown-item " style="color:rgb(0, 0, 0) ;"  href="{% url 'update-book' book.id %}">Update</a>
                                 </li>
-                                <li><a class="dropdown-item"  style="color:rgb(53, 23, 2) ;"  href="{% url 'delete-book' book.id %}">Delete</a>
+                                <li><a class="dropdown-item"  style="color:rgb(0, 0, 0) ;"  href="{% url 'delete-book' book.id %}">Delete</a>
                                 </li>
-                                <li><a class="dropdown-item"  style="color:rgb(53, 23, 2) ;"  href="{% url 'details-book' book.id %}">Details</a>
+                                <li><a class="dropdown-item"  style="color:rgb(0, 0, 0) ;"  href="{% url 'details-book' book.id %}">Details</a>
                                 </li>
                             </ul>
                         </div>

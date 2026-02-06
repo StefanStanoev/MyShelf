@@ -21,6 +21,7 @@ class BookForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please enter a short description of the book'}),
             'img': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter an image'})
             
+            
         }
 
     def clean(self):
@@ -41,7 +42,7 @@ class BookForm(forms.ModelForm):
 class BookUpdateForm(forms.ModelForm):
      class Meta:
         model = Book
-        fields = ['publication_year', 'publisher','pages','genre','language','category','description', 'img']
+        fields = ['publication_year', 'publisher','pages','genre','language','category','description', 'img','best_book']
 
         widgets = {
             #'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter book title'}),

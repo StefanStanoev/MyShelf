@@ -6,10 +6,10 @@
 <style>
 .add_book-background {
     min-height: 100vh;
-    background-image: url('{% static "images/image.png" %}');
-    background-size:contain;
-    background-position: center;
-    background-repeat:repeat;
+    background-image: url('{% static "images/biblioteca.png" %}');
+    background-size:100% 100%;
+    background-position: top;
+    background-repeat:no-repeat;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -22,7 +22,7 @@
     border-radius: 15px;
     border: none;
     background-color: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     overflow: hidden;
 }
@@ -30,16 +30,16 @@
 
     <div class="container-fluid add_book-background">
         <div class="add_book-card card">
-            <div class= "card-header text-center" style="background-color:rosybrown; color: white; border-top-left-radius: 15px; border-top-right-radius: 15px;">
-                <h3>ADD A BOOK</h3>
+            <div class= "card-header text-center" style="background-color:rgb(232, 221, 178); color: rgb(0, 0, 0); border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <h3>🕮New Book🕮</h3>
             </div>
                     <form method="POST">
                         {% csrf_token %}
                         <div class="card-body">
                              {{ form }}
                         </div>
-                        <div class="card-footer text-center" style="background-color: rosybrown; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
-                            <button type="submit" class="btn btn-primary" style="background-color: rgb(53, 23, 2); border: none;">Save</button>
+                        <div class="card-footer text-center" style="background-color: rgb(232, 221, 178); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                            <button type="submit" class="btn btn-primary" style="background-color: rgb(0, 0, 0); border: none;">Save</button>
                         </div>
                     </form>
 
@@ -48,4 +48,4 @@
         </div>
     </div>
 
-{% endblock %}
+{% endblock %}}

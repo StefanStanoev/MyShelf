@@ -29,7 +29,7 @@
                         <li><strong>Language:</strong> {{ book.language }}</li>
                         <li><strong>Cover:</strong> {{ book.cover }}</li>
                         <li><strong>Description:</strong> {{ book.description }}</li>
-                           <strong>Your rating:</strong>
+                        <strong>Your rating for this book:</strong>
                         <span class="text-muted"></span>
                         <br>
                     
@@ -37,14 +37,24 @@
         
                             {% if book.id == rating.book.id %}
         
-                          {% for _ in ""|center:rating.rating %}
-  ⭐
-{% endfor %}
+                          {% for _ in ""|center:rating.rating %}⭐
+                          {% endfor %}
 
                             {% endif %}
                         {% endfor %}
                         <br>
-                        <a href="{% url 'add-review' book.id %}" class = "btn mt-2" style="background-color:rgb(53, 23, 2); color: white;">Add Review</a>
+                        
+                        {% for comment in comments %}
+        
+                            {% if book.id == comment.book.id %}
+        
+                          {{ comment.comment }}
+
+                            {% endif %}
+                        {% endfor %}
+                     <br>
+                        <a href="{% url 'add-review' book.id %}" class = "btn mt-2" style="background-color:rgb(232, 221, 178); color: rgb(0, 0, 0);">Add Review</a>
+                        
 
                     </ul>
                                  

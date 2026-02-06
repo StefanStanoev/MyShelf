@@ -41,10 +41,11 @@ def get_all_books_per_category(request, pk):
 
     all_books = Book.objects.filter(category_id=pk)
     rating = Review.objects.filter(user=request.user)
+    comment = Review.objects.filter(user=request.user)
 
 
 
-    return render(request, 'book/list_books_per_category.html', {'books': all_books, 'ratings': rating})
+    return render(request, 'book/list_books_per_category.html', {'books': all_books, 'ratings': rating, 'comments': comment})
 
 
 
@@ -61,4 +62,4 @@ class BookDeleteView(LoginRequiredMixin, DeleteView):
 
 class BookDetailView(LoginRequiredMixin, DetailView):
     template_name = 'book/details_book.html'
-    model = Book
+    model = Book 
