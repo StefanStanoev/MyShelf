@@ -10,12 +10,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" style="color: floralwhite;" href="{% url 'home_page' %}">Home</a>
+                    <a class="nav-link active" aria-current="page" style="color:rgb(232, 221, 178);" href="{% url 'home_page' %}">Home</a>
                 </li>
 
                   {% if user.is_authenticated and perms.book_view_book%}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" style="color: rgb(232, 221, 178);" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             Books
                         </a>
@@ -25,13 +25,13 @@
                         </ul>
                     </li>
                  {% endif %}
+                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" style="color:rgb(232, 221, 178);" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             Category
                         </a>
-                        <ul class="dropdown-menu"> 
-
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" style="color: rgb(0, 0, 0);" href="{% url 'list-categories' %}">List of categories</a></li>
                          {% if perms.category.create_category %}
                             <li><a class="dropdown-item" style="color: rgb(0, 0, 0);" href="{% url 'create-category' %}">Add new category</a></li>
@@ -41,19 +41,29 @@
                         {% endif %}
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" style="color: white;" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            WTR
-                        </a>
-                        <ul class="dropdown-menu"> 
-                            <li><a class="dropdown-item" style="color: rgb(0, 0, 0);" href="#">Books</a></li>
-                        </ul>
-                    </li>
+                  {% endif %}
                 
             </ul>
-            <div>
+
+
+            
+            <div class="d-flex align-items-center">
                 {% if user.is_authenticated %}
+                 <div class="nav-item dropdown me-2">
+                        <a class="nav-link dropdown-toggle"style="color: rgb(232, 221, 178);" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ABOUT
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item"  href="https://github.com/StefanStanoev">
+                                <img src="https://logoeps.com/wp-content/uploads/2014/02/38401-github-logo-silhouette-in-a-square-icon-vector-icon-vector-eps.png "style="width: 20px; height: 20px; margin-right: 5px;" alt="GitHub">
+                                       GitHub
+                                
+                            </a></li>
+                            <li><a class="dropdown-item">☎︎ Tel: 0770123456</a></li>
+                        </ul>
+                    </div>
+
+
                     <form method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-outline-danger">Logout</button>

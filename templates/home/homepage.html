@@ -108,48 +108,50 @@
       <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
         <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden custom-background">
           <div class="my-3 py-3">
-            <h2 class="display-5">Our recommendation for today is </h2>
+            <h2 class="display-6">Our recommendation for today is </h2>
           </div>
           <div class="mx-auto">
                 <img src="{{ book.img }}" alt="Book Cover" style="width: 40%; height: 130%; object-fit:fill;">
-                <h5>{{ book.title }} by {{book.author}}</h5>
+                <h5><Strong>{{ book.title }} by {{book.author}}</Strong></h5>
                 <a href="{% url 'details-book' book.id %}" class = "btn mt-1" style="background-color:rgb(232, 221, 178); color: rgb(0, 0, 0);">More about this book</a>
           </div>
         </div>
 
         
-        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class=" me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 p-3">
-            <h2 class="display-5">You want to read a book in the future? </h2>
-            
+            <h3 class="display-6">Remarkable quotes you might not know:</h3>
           </div>
-          <div class="mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0">            
+
+           <div class="mx-auto">
+            <p> <strong>Plato:</strong>”Wise men speak because they have something to say; fools because they have to say something.”
+                 <br>
+                  Meaning: Value thoughtfulness and meaning in speech over empty chatter.</p>
+                <br>
+
+              <img src="{% static 'images/plato.png' %}"class="rounded mx-auto d-block" alt="Plato" style="width: 15%; height: 100%; object-fit:fill;">
+                <br>
+               <p> <strong>Marcus Aurelius</strong> “You have power over your mind—not outside events. Realize this, and you will find strength.”
+                <br>
+                  Meaning: Stoicism teaches that control over our thoughts leads to resilience, not external circumstances.</p>
+                <br>
+                  <img src="{% static 'images/Marcus.png' %}" class="rounded mx-auto d-block" alt="MarcusAurelius" style="width: 22%; height: 100%; object-fit:fill;">
+                  <br>
+                   <br>
+                   <a href="{% url 'list-books-per-category' 27 %}" class = "btn mt-1" style="background-color:rgb(232, 221, 178); color: rgb(0, 0, 0);">Find their popular books right here</a>
+          </div>
+
+          </div>        
 
               
           </div>
 
         </div>
       </div>
-      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-          <div class="my-3 p-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-          </div>
-          <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"></div>
-        </div>
-        <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-          <div class="my-3 py-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-          </div>
-          <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"></div>
-        </div>
-      </div>
-      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <footer class="text-center mt-5 p-4 bg-light border-top">
+    <p class = "mb-1">@ 2026 MyShelf App</p>
  
- 
+
     </main>
 
 {% endblock %}
